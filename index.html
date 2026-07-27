@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heavenly Bites | Handcrafted Luxury Cakes & Custom Bakery</title>
+<meta name="description" content="Heavenly Bites is a premium bakery crafting handmade cakes with fresh, premium ingredients for birthdays, weddings, anniversaries and every celebration. Order online, same-day delivery available.">
+<meta name="keywords" content="cake shop, bakery, custom cakes, birthday cakes, wedding cakes, online cake order">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+/* =========================================================
+   Heavenly Bites — Stylesheet
+   Palette: Primary #E91E63 | Secondary #FFB6C1 | Accent #FFF5E4
+            Background #FFFFFF | Text #333333 | Brown #8C5A3B
+   Fonts: Playfair Display (display) / Poppins (body)
+   ========================================================= */
+
+:root {
+  --primary: #E91E63;
+  --primary-dark: #C2185B;
+  --secondary: #FFB6C1;
+  --accent: #FFF5E4;
+  --bg: #FFFFFF;
+  --text: #333333;
+  --text-light: #7a7178;
+  --brown: #8C5A3B;
+  --gold: #E8B975;
+  --cream: #FFFBF6;
+
+  --grad-primary: linear-gradient(135deg, #F06292 0%, #E91E63 55%, #C2185B 100%);
+  --grad-soft: linear-gradient(135deg, #FFF5E4 0%, #FFE3EC 100%);
+  --grad-offer: linear-gradient(120deg, #C2185B 0%, #E91E63 45%, #F48FB1 100%);
+
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --shadow-sm: 0 4px 16px rgba(233, 30, 99, 0.08);
+  --shadow-md: 0 12px 32px rgba(233, 30, 99, 0.14);
+  --shadow-lg: 0 24px 60px rgba(140, 40, 70, 0.18);
+
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+/* ============ Reset ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, textarea { font-family: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section { padding: 110px 0; position: relative; }
+@media (max-width: 768px) { .section { padding: 76px 0; } }
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 30px;
+}
+.section-eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 20px; height: 2px;
+  background: var(--primary);
+}
+.section-eyebrow.light { color: #FFE3EC; }
+.section-eyebrow.light::before { background: #FFE3EC; }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  color: #241417;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.section-desc {
+  max-width: 620px;
+  margin: 0 auto 56px;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1.03rem;
+}
+
+.cakes .section-eyebrow,
+.cakes .section-title,
+.why-us .section-eyebrow,
+.why-us .section-title,
+.testimonials .section-eyebrow,
+.testimonials .section-title,
+.gallery .section-eyebrow,
+.gallery .section-title {
+  text-align: center;
+  display: block;
+}
+.cakes .section-eyebrow, .why-us .section-eyebrow, .testimonials .section-eyebrow, .gallery .section-eyebrow {
+  padding-left: 0;
+}
+.cakes .section-eyebrow::before, .why-us .section-eyebrow::before, .testimonials .section-eyebrow::before, .gallery .section-eyebrow::before {
+  display: none;
+}
+.cakes .section-title, .why-us .section-title, .testimonials .section-title, .gallery .section-title {
+  margin-inline: auto;
+}
+
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--grad-primary);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(233,30,99,.32); }
+.btn-primary:active { transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.8);
+  backdrop-filter: blur(4px);
+}
+.btn-outline:hover { background: #fff; color: var(--primary-dark); transform: translateY(-3px); }
+
+.btn-light {
+  background: #fff;
+  color: var(--primary-dark);
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+}
+.btn-light:hover { transform: translateY(-3px) scale(1.02); }
+
+.btn-small {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  background: var(--accent);
+  color: var(--primary-dark);
+  border-radius: 40px;
+}
+.btn-small:hover { background: var(--primary); color: #fff; }
+
+/* ============ Scroll progress ============ */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--grad-primary);
+  z-index: 1200;
+  transition: width .1s linear;
+}
+
+/* ============ Navbar ============ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 22px 0;
+  transition: all .4s var(--ease);
+  background: transparent;
+}
+.navbar.scrolled {
+  padding: 12px 0;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: 0 4px 30px rgba(140,40,70,.08);
+}
+
+.nav-container {
+  max-width: 1220px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  transition: color .4s var(--ease);
+}
+.navbar.scrolled .logo { color: #241417; }
+.logo-icon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--grad-primary);
+  color: #fff;
+  font-size: 1.05rem;
+  box-shadow: var(--shadow-sm);
+}
+.logo-text em { font-style: normal; color: var(--primary); }
+.navbar:not(.scrolled) .logo-text em { color: #FFC9DA; }
+
+.nav-links {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+}
+.nav-link {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 6px 2px;
+  transition: color .35s;
+}
+.navbar.scrolled .nav-link { color: var(--text); }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: var(--primary);
+  transition: width .35s var(--ease);
+}
+.nav-link:hover, .nav-link.active-link { color: var(--primary); }
+.navbar:not(.scrolled) .nav-link:hover,
+.navbar:not(.scrolled) .nav-link.active-link { color: #fff; }
+.nav-link:hover::after, .nav-link.active-link::after { width: 100%; }
+
+.nav-cta { padding: 12px 26px; font-size: 0.88rem; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+  z-index: 1100;
+}
+.hamburger span {
+  height: 2.5px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all .35s var(--ease);
+}
+.navbar.scrolled .hamburger span { background: var(--text); }
+.hamburger.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); background: var(--text); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); background: var(--text); }
+
+/* ============ Hero ============ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg .hero-slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  animation: heroFade 24s linear infinite;
+}
+.hero-bg .hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-bg .hero-slide:nth-child(2) { animation-delay: 6s; }
+.hero-bg .hero-slide:nth-child(3) { animation-delay: 12s; }
+.hero-bg .hero-slide:nth-child(4) { animation-delay: 18s; }
+.hero-bg .hero-slide:nth-child(5) { animation-delay: 24s; }
+.hero-bg .hero-slide:nth-child(6) { animation-delay: 30s; }
+@keyframes heroFade {
+  0% { opacity: 0; transform: scale(1.08); }
+  3% { opacity: 1; }
+  20% { opacity: 1; }
+  23% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+.hero-bg .hero-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(30,10,20,.55) 0%, rgba(45,10,25,.62) 55%, rgba(20,6,14,.78) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 0 24px;
+  color: #fff;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #FFD9E4;
+  margin-bottom: 22px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: 1.08;
+  letter-spacing: -1px;
+  margin-bottom: 22px;
+  text-shadow: 0 4px 30px rgba(0,0,0,.25);
+}
+.hero-title span {
+  font-style: italic;
+  font-weight: 600;
+  background: linear-gradient(120deg, #FFD3E0, #F8A6C1 60%, #E91E63);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 300;
+  color: #F6E4EA;
+  margin-bottom: 40px;
+}
+
+.hero-cta { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+
+.scroll-cue {
+  position: absolute;
+  bottom: 34px; left: 50%;
+  transform: translateX(-50%);
+  width: 26px; height: 42px;
+  border: 2px solid rgba(255,255,255,.65);
+  border-radius: 20px;
+  z-index: 2;
+}
+.scroll-cue span {
+  position: absolute;
+  top: 7px; left: 50%;
+  width: 5px; height: 5px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: scrollDot 1.8s ease-in-out infinite;
+}
+@keyframes scrollDot {
+  0% { top: 7px; opacity: 1; }
+  70% { top: 24px; opacity: 0; }
+  100% { top: 24px; opacity: 0; }
+}
+
+/* ============ Reveal animations ============ */
+.reveal, .reveal-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+.reveal.in-view, .reveal-up.in-view { opacity: 1; transform: translateY(0); }
+.hero-content .reveal-up:nth-child(1) { transition-delay: .05s; }
+.hero-content .reveal-up:nth-child(2) { transition-delay: .18s; }
+.hero-content .reveal-up:nth-child(3) { transition-delay: .3s; }
+.hero-content .reveal-up:nth-child(4) { transition-delay: .42s; }
+.hero-content .reveal-up { opacity: 1; transform: none; animation: heroUp .9s var(--ease) both; }
+.hero-content .reveal-up:nth-child(1) { animation-delay: .1s; }
+.hero-content .reveal-up:nth-child(2) { animation-delay: .28s; }
+.hero-content .reveal-up:nth-child(3) { animation-delay: .46s; }
+.hero-content .reveal-up:nth-child(4) { animation-delay: .64s; }
+@keyframes heroUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ Cake Cards ============ */
+.cakes { background: var(--cream); }
+
+.cake-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+@media (max-width: 980px) { .cake-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .cake-grid { grid-template-columns: 1fr; } }
+
+.cake-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+  position: relative;
+}
+.cake-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cake-img { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+.cake-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+.cake-card:hover .cake-img img { transform: scale(1.1) rotate(1deg); }
+
+.cake-tag {
+  position: absolute;
+  top: 16px; left: 16px;
+  background: var(--grad-primary);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 30px;
+  letter-spacing: .5px;
+  box-shadow: 0 6px 16px rgba(233,30,99,.35);
+}
+
+.cake-body { padding: 26px 24px 24px; }
+.cake-body h3 { font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 8px; color: #241417; }
+.cake-body p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 20px; min-height: 42px; }
+
+.cake-footer { display: flex; align-items: center; justify-content: space-between; }
+.price { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--primary); }
+
+/* ============ Why Choose Us ============ */
+.why-us { background: var(--bg); }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-bottom: 80px;
+}
+@media (max-width: 980px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+
+.feature-card {
+  background: var(--grad-soft);
+  border-radius: var(--radius-md);
+  padding: 38px 26px;
+  text-align: center;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+  border: 1px solid rgba(233,30,99,.06);
+}
+.feature-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+
+.feature-icon {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  margin: 0 auto 20px;
+  background: var(--grad-primary);
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .45s var(--ease);
+}
+.feature-card:hover .feature-icon { transform: rotate(-8deg) scale(1.08); }
+
+.feature-card h3 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 10px; }
+.feature-card p { color: var(--text-light); font-size: 0.9rem; }
+
+.counters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+  padding-top: 50px;
+  border-top: 1px solid #f1e4e9;
+}
+@media (max-width: 700px) { .counters { grid-template-columns: repeat(2, 1fr); row-gap: 40px; } }
+
+.counter-item .counter, .counter-item .plus, .counter-item .percent {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--primary);
+}
+.counter-item p { color: var(--text-light); font-size: 0.88rem; margin-top: 6px; letter-spacing: .3px; }
+
+/* ============ Offer Banner ============ */
+.offer {
+  position: relative;
+  background: var(--grad-offer);
+  overflow: hidden;
+  padding: 80px 0;
+}
+.offer-shine {
+  position: absolute;
+  top: -50%; left: -20%;
+  width: 60%; height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,.16), transparent 60%);
+  transform: rotate(20deg);
+  animation: shineMove 7s ease-in-out infinite;
+}
+@keyframes shineMove {
+  0%, 100% { left: -20%; }
+  50% { left: 60%; }
+}
+.offer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.offer-text h2 {
+  font-family: var(--font-display);
+  color: #fff;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  margin: 8px 0 12px;
+  font-weight: 700;
+}
+.offer-text p { color: #FCE1EA; font-size: 1rem; }
+.offer-text p strong { color: #fff; letter-spacing: 1px; }
+
+/* ============ About ============ */
+.about-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+@media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; } }
+
+.about-media { position: relative; }
+.about-media img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.about-badge {
+  position: absolute;
+  bottom: -26px; left: -26px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--primary-dark);
+}
+@media (max-width: 500px) { .about-badge { left: 12px; bottom: -18px; padding: 12px 16px; } }
+.about-badge i { font-size: 1.6rem; color: var(--gold); }
+
+.about-text p { color: var(--text-light); margin-bottom: 22px; }
+.about-list { margin-bottom: 30px; }
+.about-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-weight: 500;
+  color: var(--text);
+}
+.about-list i {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  color: #fff;
+  display: grid; place-items: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+/* ============ Testimonials ============ */
+.testimonials { background: var(--cream); }
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+@media (max-width: 1100px) { .testimonial-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .testimonial-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; } }
+
+.testimonial-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 34px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+  position: relative;
+}
+.testimonial-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 10px; right: 24px;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  color: var(--accent);
+  z-index: 0;
+  line-height: 1;
+}
+.testimonial-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+.stars { color: var(--gold); margin-bottom: 16px; font-size: 0.9rem; letter-spacing: 3px; position: relative; z-index: 1; }
+.testimonial-card p { color: var(--text); font-size: 0.96rem; margin-bottom: 24px; position: relative; z-index: 1; font-style: italic; }
+
+.testimonial-user { display: flex; align-items: center; gap: 14px; }
+.testimonial-user img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary); }
+.testimonial-user h4 { font-size: 0.95rem; font-family: var(--font-display); }
+.testimonial-user span { font-size: 0.78rem; color: var(--text-light); }
+
+/* ============ Gallery ============ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+@media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.gallery-item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  position: relative;
+  cursor: pointer;
+}
+.gallery-item::after {
+  content: "\f00e";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  inset: 0;
+  display: grid; place-items: center;
+  color: #fff;
+  font-size: 1.3rem;
+  background: rgba(233,30,99,.45);
+  opacity: 0;
+  transition: opacity .4s var(--ease);
+}
+.gallery-item:hover::after { opacity: 1; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.gallery-item:hover img { transform: scale(1.15); }
+
+/* ============ Contact ============ */
+.contact { background: var(--cream); }
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+}
+@media (max-width: 900px) { .contact-inner { grid-template-columns: 1fr; gap: 44px; } }
+
+.contact-lead { color: var(--text-light); margin-bottom: 30px; max-width: 420px; }
+
+.contact-list { margin-bottom: 30px; }
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 0;
+  font-size: 0.95rem;
+}
+.contact-list i {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--primary);
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.contact-socials { display: flex; gap: 12px; }
+.contact-socials a {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--primary);
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: all .35s var(--ease);
+}
+.contact-socials a:hover { background: var(--grad-primary); color: #fff; transform: translateY(-4px); }
+
+.contact-map { margin-top: 24px; }
+.contact-map iframe { width: 100%; border-radius: 12px; }
+
+.contact-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+@media (max-width: 500px) { .contact-form { padding: 26px; } }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-group { margin-bottom: 20px; position: relative; }
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid #EEE0E5;
+  background: var(--cream);
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color .3s, box-shadow .3s;
+  resize: vertical;
+}
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(233,30,99,.1);
+}
+.form-group.invalid input, .form-group.invalid textarea { border-color: #e04b4b; }
+.error-msg {
+  display: block;
+  font-size: 0.76rem;
+  color: #e04b4b;
+  margin-top: 6px;
+  min-height: 14px;
+}
+
+.form-submit { width: 100%; justify-content: center; margin-top: 6px; }
+.form-success {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: #EAFBEF;
+  color: #1f8a4c;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  text-align: center;
+}
+.form-success.show { display: block; animation: heroUp .5s var(--ease); }
+
+/* ============ Footer ============ */
+.footer { background: #241016; color: #f2e4e8; padding-top: 80px; }
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+@media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .footer-inner { grid-template-columns: 1fr; } }
+
+.footer-brand p { color: #cbb2ba; margin: 14px 0 20px; font-size: 0.9rem; max-width: 280px; }
+.footer-logo { color: #fff; }
+.footer .contact-socials a { background: rgba(255,255,255,.06); color: #fff; box-shadow: none; }
+.footer .contact-socials a:hover { background: var(--grad-primary); }
+
+.footer-links h4, .footer-newsletter h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links a { color: #cbb2ba; font-size: 0.9rem; transition: color .3s, padding-left .3s; }
+.footer-links a:hover { color: var(--secondary); padding-left: 4px; }
+
+.footer-newsletter p { color: #cbb2ba; font-size: 0.88rem; margin-bottom: 18px; }
+.newsletter-form { display: flex; gap: 0; border-radius: 50px; overflow: hidden; background: rgba(255,255,255,.06); }
+.newsletter-form input {
+  flex: 1;
+  padding: 13px 18px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.88rem;
+}
+.newsletter-form input::placeholder { color: #a98d96; }
+.newsletter-form button {
+  padding: 0 18px;
+  background: var(--grad-primary);
+  color: #fff;
+  display: grid; place-items: center;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 26px 0;
+  font-size: 0.82rem;
+  color: #a98d96;
+}
+
+/* ============ Back to top ============ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  color: #fff;
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: all .4s var(--ease);
+  z-index: 900;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-5px); }
+
+/* ============ Mobile Nav ============ */
+@media (max-width: 900px) {
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: min(78vw, 340px);
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    transition: right .5s var(--ease);
+    box-shadow: -10px 0 40px rgba(0,0,0,.15);
+  }
+  .nav-links.open { right: 0; }
+  .nav-links .nav-link { color: var(--text); font-size: 1.1rem; }
+  .nav-links::before {
+    content: "";
+  }
+}
+
+/* ============ Admin Panel ============ */
+.admin-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+.admin-overlay.open { display: flex; }
+
+.admin-panel {
+  background: #fff;
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.3);
+  animation: adminSlideIn .4s var(--ease);
+  position: relative;
+}
+@keyframes adminSlideIn {
+  from { opacity: 0; transform: translateY(30px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 30px;
+  border-bottom: 1px solid #f1e4e9;
+}
+.admin-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: #241417;
+}
+.admin-close {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--text);
+  display: grid; place-items: center;
+  font-size: 1.1rem;
+  transition: background .3s, color .3s;
+}
+.admin-close:hover { background: var(--primary); color: #fff; }
+
+.admin-body { padding: 30px; }
+
+.admin-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.admin-tab {
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  background: var(--accent);
+  color: var(--text);
+  transition: background .3s, color .3s;
+}
+.admin-tab.active { background: var(--grad-primary); color: #fff; }
+.admin-tab:hover:not(.active) { background: #FFE3EC; }
+
+.admin-form-section { display: none; }
+.admin-form-section.active { display: block; }
+
+.admin-form .form-group { margin-bottom: 18px; }
+.admin-form .form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+.admin-form .form-group input,
+.admin-form .form-group textarea,
+.admin-form .form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid #EEE0E5;
+  background: var(--cream);
+  font-size: 0.93rem;
+  color: var(--text);
+  transition: border-color .3s, box-shadow .3s;
+  resize: vertical;
+}
+.admin-form .form-group input:focus,
+.admin-form .form-group textarea:focus,
+.admin-form .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(233,30,99,.1);
+}
+
+.admin-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 560px) { .admin-form .form-row { grid-template-columns: 1fr; } }
+
+.admin-image-upload {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.admin-image-upload label {
+  flex: 1;
+  min-width: 200px;
+}
+.admin-image-upload .or-divider {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  font-weight: 600;
+}.admin-file-input {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: var(--primary-dark);
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s, color .3s;
+  border: 1.5px dashed var(--primary);
+}
+.admin-file-input:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.admin-file-input input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.admin-preview {
+  margin-top: 12px;
+  display: none;
+}
+.admin-preview.show { display: block; }
+.admin-preview img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--secondary);
+}
+
+.admin-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+.admin-actions .btn { flex: 1; justify-content: center; }
+.admin-btn-cancel {
+  background: var(--accent);
+  color: var(--text);
+}
+.admin-btn-cancel:hover { background: #FFE3EC; }
+
+.admin-cake-list { display: flex; flex-direction: column; gap: 14px; }
+.admin-cake-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+  transition: box-shadow .3s;
+}
+.admin-cake-item:hover { box-shadow: var(--shadow-sm); }
+.admin-cake-item img {
+  width: 70px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.admin-cake-info { flex: 1; min-width: 0; }
+.admin-cake-info h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: #241417;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.admin-cake-info p {
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+.admin-cake-info .price {
+  font-size: 0.95rem;
+}
+.admin-cake-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.admin-cake-actions button {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 0.85rem;
+  transition: background .3s, color .3s;
+}
+.admin-edit-btn { background: #E3F2FD; color: #1565C0; }
+.admin-edit-btn:hover { background: #1565C0; color: #fff; }
+.admin-delete-btn { background: #FFEBEE; color: #C62828; }
+.admin-delete-btn:hover { background: #C62828; color: #fff; }
+
+.admin-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-light);
+}
+.admin-empty i { font-size: 2rem; margin-bottom: 12px; display: block; color: var(--secondary); }
+
+/* ============ Admin Password Modal ============ */
+.admin-pass-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(6px);
+  z-index: 2500;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.admin-pass-overlay.open { display: flex; }
+
+.admin-pass-box {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  animation: adminSlideIn .35s var(--ease);
+}
+.admin-pass-box .pass-icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--grad-soft);
+  display: grid; place-items: center;
+  margin: 0 auto 18px;
+}
+.admin-pass-box .pass-icon i { font-size: 1.5rem; color: var(--primary); }
+.admin-pass-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #241417;
+}
+.admin-pass-box p { color: var(--text-light); font-size: 0.88rem; margin-bottom: 22px; }
+.admin-pass-box input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid #EEE0E5;
+  background: var(--cream);
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: 600;
+  transition: border-color .3s, box-shadow .3s;
+}
+.admin-pass-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(233,30,99,.1);
+}
+.admin-pass-box .pass-error {
+  color: #C62828;
+  font-size: 0.82rem;
+  margin-top: 10px;
+  min-height: 18px;
+}
+.admin-pass-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+.admin-pass-actions .btn { flex: 1; justify-content: center; }
+.admin-pass-cancel {
+  background: var(--accent);
+  color: var(--text);
+}
+.admin-pass-cancel:hover { background: #FFE3EC; }
+
+.admin-footer-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,.4);
+  transition: color .3s, background .3s;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.admin-footer-link:hover { color: #fff; background: rgba(255,255,255,.1); }
+
+.admin-msg {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  display: none;
+  animation: heroUp .4s var(--ease);
+}
+.admin-msg.show { display: block; }
+.admin-msg.success { background: #EAFBEF; color: #1f8a4c; }
+.admin-msg.error { background: #FFEBEE; color: #C62828; }
+
+@media (max-width: 600px) {
+  .admin-panel { margin-top: 10px; }
+  .admin-body { padding: 20px; }
+  .admin-header { padding: 18px 20px; }
+  .admin-cake-item { flex-wrap: wrap; }
+}
+
+/* ============ Global Responsive ============ */
+@media (max-width: 900px) {
+  .offer-inner { flex-direction: column; text-align: center; }
+  .offer-text { margin-bottom: 10px; }
+  .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .section { padding: 64px 0; }
+  .section-title { font-size: 1.7rem; }
+  .section-desc { font-size: 0.95rem; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn { width: 100%; max-width: 260px; justify-content: center; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+  .footer-bottom { font-size: 0.78rem; padding: 20px 0; }
+  .contact-list li { font-size: 0.88rem; }
+  .contact-map iframe { height: 200px; }
+  .admin-overlay { padding: 10px; }
+  .admin-panel { max-height: 90vh; overflow-y: auto; }
+  .admin-header h2 { font-size: 1.15rem; }
+  .admin-pass-box { padding: 28px 22px; }
+  .admin-pass-actions { flex-direction: column; gap: 8px; }
+  .admin-cake-info h4 { font-size: 0.92rem; }
+  .admin-cake-info p { font-size: 0.78rem; }
+  .admin-cake-item img { width: 55px; height: 44px; }
+  .admin-image-upload { flex-direction: column; align-items: stretch; }
+  .admin-image-upload .or-divider { text-align: center; }
+  .admin-file-input { justify-content: center; width: 100%; }
+  .admin-file-input input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .admin-actions { flex-direction: column; }
+  .admin-actions .btn { width: 100%; justify-content: center; }
+  .feature-card { padding: 28px 20px; }
+  .about-badge { position: relative; bottom: auto; left: auto; margin-top: -20px; display: inline-flex; }
+  .about-media img { aspect-ratio: 16/10; }
+  .floating-cake { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===================== Scroll Progress Bar ===================== -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ===================== Navigation ===================== -->
+<header class="navbar" id="navbar">
+  <nav class="nav-container" aria-label="Primary navigation">
+    <a href="#home" class="logo">
+      <span class="logo-icon" aria-hidden="true"><i class="fa-solid fa-cake-candles"></i></span>
+      <span class="logo-text">Heavenly<em>Bites</em></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active-link">Home</a></li>
+      <li><a href="#cakes" class="nav-link">Cakes</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="javascript:void(0)" class="nav-link" id="adminNavLink"><i class="fa-solid fa-lock" style="font-size:0.8rem;margin-right:4px"></i>Admin</a></li>
+    </ul>
+
+    <a href="https://www.messenger.com/t/YOUR_PAGE_NAME" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Order Now</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ===================== Hero Section ===================== -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1740&q=80" alt="Chocolate cake" loading="eager"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1740&q=80" alt="Black Forest cake" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=1740&q=80" alt="Red Velvet cake" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=1740&q=80" alt="Wedding cake" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=1740&q=80" alt="Rainbow cake" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1740&q=80" alt="Birthday cake" loading="lazy"></div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="eyebrow reveal-up">Handcrafted &middot; Small-Batch &middot; Made With Love</p>
+    <h1 class="hero-title reveal-up">Freshly Baked <span>Happiness</span></h1>
+    <p class="hero-subtitle reveal-up">Every celebration deserves a Heavenly Bite.</p>
+    <div class="hero-cta reveal-up">
+      <a href="https://www.messenger.com/t/YOUR_PAGE_NAME" target="_blank" rel="noopener" class="btn btn-primary">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#gallery" class="btn btn-outline">View Menu</a>
+    </div>
+  </div>
+
+  <a href="#cakes" class="scroll-cue" aria-label="Scroll to explore">
+    <span></span>
+  </a>
+</section>
+
+<!-- ===================== Featured Cakes ===================== -->
+<section class="section cakes" id="cakes">
+  <div class="container">
+    <p class="section-eyebrow reveal">Our Signature Bakes</p>
+    <h2 class="section-title reveal">Featured Cakes</h2>
+    <p class="section-desc reveal">Each cake is layered, filled and finished entirely by hand in our kitchen &mdash; using only the finest cocoa, fruit and cream.</p>
+
+    <div class="cake-grid">
+
+      <article class="cake-card reveal">
+        <div class="cake-img">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80" alt="Chocolate Truffle cake with rich ganache" loading="lazy">
+          <span class="cake-tag">Bestseller</span>
+        </div>
+        <div class="cake-body">
+          <h3>Chocolate Truffle</h3>
+          <p>Layers of dark cocoa sponge folded with silky truffle ganache.</p>
+          <div class="cake-footer">
+            <span class="price">$34.99</span>
+            <button class="btn btn-small">Order Now</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cake-card reveal">
+        <div class="cake-img">
+          <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=800&q=80" alt="Red Velvet cake with cream cheese frosting" loading="lazy">
+        </div>
+        <div class="cake-body">
+          <h3>Red Velvet</h3>
+          <p>Classic velvet crumb finished with whipped cream-cheese icing.</p>
+          <div class="cake-footer">
+            <span class="price">$32.99</span>
+            <button class="btn btn-small">Order Now</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cake-card reveal">
+        <div class="cake-img">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80" alt="Black Forest cake with cherries and chocolate shavings" loading="lazy">
+        </div>
+        <div class="cake-body">
+          <h3>Black Forest</h3>
+          <p>Kirsch-soaked sponge, whipped cream and hand-pitted cherries.</p>
+          <div class="cake-footer">
+            <span class="price">$36.99</span>
+            <button class="btn btn-small">Order Now</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cake-card reveal">
+        <div class="cake-img">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80" alt="Strawberry Delight cake topped with fresh strawberries" loading="lazy">
+          <span class="cake-tag">New</span>
+        </div>
+        <div class="cake-body">
+          <h3>Strawberry Delight</h3>
+          <p>Vanilla chiffon layered with fresh strawberry compote &amp; cream.</p>
+          <div class="cake-footer">
+            <span class="price">$33.99</span>
+            <button class="btn btn-small">Order Now</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cake-card reveal">
+        <div class="cake-img">
+          <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt="Blueberry Cheesecake with berry topping" loading="lazy">
+        </div>
+        <div class="cake-body">
+          <h3>Blueberry Cheesecake</h3>
+          <p>Baked New York cheesecake crowned with a wild blueberry glaze.</p>
+          <div class="cake-footer">
+            <span class="price">$37.99</span>
+            <button class="btn btn-small">Order Now</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cake-card reveal">
+        <div class="cake-img">
+          <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=800&q=80" alt="Rainbow layer cake with colourful sponge" loading="lazy">
+        </div>
+        <div class="cake-body">
+          <h3>Rainbow Cake</h3>
+          <p>Six vibrant vanilla layers wrapped in silky buttercream.</p>
+          <div class="cake-footer">
+            <span class="price">$35.99</span>
+            <button class="btn btn-small">Order Now</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Why Choose Us ===================== -->
+<section class="section why-us">
+  <div class="container">
+    <p class="section-eyebrow reveal">The Heavenly Standard</p>
+    <h2 class="section-title reveal">Why Choose Us</h2>
+
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+        <h3>Fresh Ingredients</h3>
+        <p>Sourced daily from trusted local farms &amp; dairies.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h3>Same Day Delivery</h3>
+        <p>Order before 2 PM and it's at your door by evening.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3>Handmade Cakes</h3>
+        <p>Every layer piped and finished by hand, never mass-made.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
+        <h3>Custom Designs</h3>
+        <p>Tell us your vision &mdash; we'll bring it to life in cake.</p>
+      </div>
+    </div>
+
+    <div class="counters">
+      <div class="counter-item reveal">
+        <span class="counter" data-target="12500">0</span><span class="plus">+</span>
+        <p>Cakes Delivered</p>
+      </div>
+      <div class="counter-item reveal">
+        <span class="counter" data-target="8">0</span>
+        <p>Years of Craft</p>
+      </div>
+      <div class="counter-item reveal">
+        <span class="counter" data-target="4900">0</span><span class="plus">+</span>
+        <p>Happy Customers</p>
+      </div>
+      <div class="counter-item reveal">
+        <span class="counter" data-target="98">0</span><span class="percent">%</span>
+        <p>5-Star Reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== About Section ===================== -->
+<section class="section about" id="about">
+  <div class="container about-inner">
+    <div class="about-media reveal">
+      <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80" alt="Baker decorating a cake by hand in the Heavenly Bites kitchen" loading="lazy">
+      <div class="about-badge">
+        <i class="fa-solid fa-award"></i>
+        <span>8+ Years<br>of Craft</span>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <p class="section-eyebrow">Our Story</p>
+      <h2 class="section-title">About Heavenly Bites</h2>
+      <p>Heavenly Bites creates handcrafted cakes using premium ingredients, baked fresh in small batches and finished entirely by hand. From birthdays and weddings to anniversaries and quiet everyday celebrations, every cake we make is designed to deliver a little more happiness to your table.</p>
+      <ul class="about-list">
+        <li><i class="fa-solid fa-check"></i> Premium, locally-sourced ingredients</li>
+        <li><i class="fa-solid fa-check"></i> Custom flavours &amp; designs for any occasion</li>
+        <li><i class="fa-solid fa-check"></i> Baked fresh to order, never frozen</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Testimonials ===================== -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <p class="section-eyebrow reveal">Kind Words</p>
+    <h2 class="section-title reveal">Loved By Our Customers</h2>
+
+    <div class="testimonial-grid">
+      <article class="testimonial-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Best cake I've ever had! The Chocolate Truffle was absolutely divine. Heavenly Bites never disappoints."</p>
+        <div class="testimonial-user">
+          <div>
+            <h4>Mifta</h4>
+            <span>Verified Customer</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Ordered a custom birthday cake for my brother. The design was perfect and the taste was outstanding!"</p>
+        <div class="testimonial-user">
+          <div>
+            <h4>Arob</h4>
+            <span>Verified Customer</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Their wedding cake was a masterpiece! Everyone at the ceremony loved it. Highly recommended for any occasion."</p>
+        <div class="testimonial-user">
+          <div>
+            <h4>Aros</h4>
+            <span>Verified Customer</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card reveal">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"Same-day delivery saved my anniversary celebration. Fresh, beautiful and absolutely delicious cake!"</p>
+        <div class="testimonial-user">
+          <div>
+            <h4>Alif</h4>
+            <span>Verified Customer</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Gallery ===================== -->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <p class="section-eyebrow reveal">A Taste Of Our Work</p>
+    <h2 class="section-title reveal">Gallery</h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Chocolate cake with layers" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80" alt="Black Forest cake with cherries" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=600&q=80" alt="Red Velvet cake slice" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=600&q=80" alt="Wedding tier cake" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=600&q=80" alt="Rainbow layered cake" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=600&q=80" alt="Birthday celebration cake" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" alt="Mango cheesecake" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=600&q=80" alt="Butterscotch cake" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Contact ===================== -->
+<section class="section contact" id="contact">
+  <div class="container contact-inner">
+    <div class="contact-info reveal">
+      <p class="section-eyebrow">Say Hello</p>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-lead">Have a celebration coming up? Reach out and let's design something sweet together.</p>
+
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-user"></i><span><strong>Misba Hull Jannat</strong> (Owner)</span></li>
+        <li><i class="fa-solid fa-location-dot"></i><span>Bodo Kumira, Sitakunda, Chittagong, Bangladesh</span></li>
+        <li><i class="fa-solid fa-phone"></i><span>+880 1825-757800</span></li>
+        <li><i class="fa-solid fa-phone"></i><span>+880 1814-940547</span></li>
+        <li><i class="fa-solid fa-envelope"></i><span>hello@heavenlybites.com</span></li>
+        <li><i class="fa-solid fa-clock"></i><span>Mon &ndash; Sat: 9:00 AM &ndash; 8:00 PM</span></li>
+      </ul>
+
+      <div class="contact-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <div class="contact-map">
+        <iframe src="https://maps.google.com/maps?q=Bodo+Kumira,+Sitakunda,+Chittagong,+Bangladesh&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0; border-radius: 12px; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Heavenly Bites Location"></iframe>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true">
+          <span class="error-msg" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true">
+          <span class="error-msg" id="emailError"></span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890" required aria-required="true">
+          <span class="error-msg" id="phoneError"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us about your order or occasion..." required aria-required="true"></textarea>
+        <span class="error-msg" id="messageError"></span>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit">
+        <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+      </button>
+      <p class="form-success" id="formSuccess" role="status" aria-live="polite">Thank you! Your message has been sent &mdash; we'll be in touch shortly.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== Footer ===================== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#home" class="logo footer-logo">
+        <span class="logo-icon" aria-hidden="true"><i class="fa-solid fa-cake-candles"></i></span>
+        <span class="logo-text">Heavenly<em>Bites</em></span>
+      </a>
+      <p>Handcrafted cakes, baked fresh daily for every celebration.</p>
+      <div class="contact-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#cakes">Cakes</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Our Bakes</h4>
+      <ul>
+        <li><a href="#cakes">Chocolate Truffle</a></li>
+        <li><a href="#cakes">Red Velvet</a></li>
+        <li><a href="#cakes">Black Forest</a></li>
+        <li><a href="#cakes">Custom Cakes</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-newsletter">
+      <h4>Stay Sweet</h4>
+      <p>Subscribe for new flavours &amp; offers.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email" aria-label="Email for newsletter" required>
+        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Heavenly Bites. All rights reserved.</p>
+    <span class="admin-footer-link" id="adminFooterLink" title="Admin Panel"><i class="fa-solid fa-lock"></i> Admin</span>
+  </div>
+</footer>
+
+<!-- ===================== Admin Password ===================== -->
+<div class="admin-pass-overlay" id="adminPassOverlay">
+  <div class="admin-pass-box">
+    <div class="pass-icon"><i class="fa-solid fa-lock"></i></div>
+    <h3>Admin Access</h3>
+    <p>Enter password to continue</p>
+    <input type="password" id="adminPassInput" placeholder="Enter password" maxlength="30" autocomplete="off">
+    <p class="pass-error" id="adminPassError"></p>
+    <div class="admin-pass-actions">
+      <button class="btn btn-small admin-pass-cancel" id="adminPassCancel">Cancel</button>
+      <button class="btn btn-primary btn-small" id="adminPassSubmit">Verify</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== Admin Panel ===================== -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel">
+    <div class="admin-header">
+      <h2><i class="fa-solid fa-lock" style="margin-right:8px;color:var(--primary)"></i>Admin Panel</h2>
+      <button class="admin-close" id="adminClose" aria-label="Close admin panel"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="admin-body">
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="add">Add Cake</button>
+        <button class="admin-tab" data-tab="manage">Manage Cakes</button>
+      </div>
+
+      <div class="admin-msg" id="adminMsg"></div>
+
+      <!-- Add / Edit Cake Form -->
+      <div class="admin-form-section active" id="adminAddSection">
+        <form class="admin-form" id="adminCakeForm" novalidate>
+          <input type="hidden" id="editCakeId" value="">
+          <div class="form-group">
+            <label for="cakeName">Cake Name *</label>
+            <input type="text" id="cakeName" placeholder="e.g. Chocolate Truffle" required>
+          </div>
+          <div class="form-group">
+            <label for="cakeDesc">Description *</label>
+            <textarea id="cakeDesc" rows="3" placeholder="Describe the cake..." required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cakePrice">Price ($) *</label>
+              <input type="number" id="cakePrice" step="0.01" min="0" placeholder="34.99" required>
+            </div>
+            <div class="form-group">
+              <label for="cakeTag">Tag (optional)</label>
+              <select id="cakeTag">
+                <option value="">No Tag</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Marriage">Marriage</option>
+                <option value="Bestseller">Bestseller</option>
+                <option value="New">New</option>
+                <option value="Popular">Popular</option>
+                <option value="Seasonal">Seasonal</option>
+                <option value="Sale">Sale</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Cake Image *</label>
+            <div class="admin-image-upload">
+              <label>
+                <span style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:6px;color:var(--text-light)">Image URL</span>
+                <input type="url" id="cakeImageUrl" placeholder="https://example.com/cake.jpg" style="width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid #EEE0E5;background:var(--cream);font-size:0.93rem;">
+              </label>
+              <span class="or-divider">OR</span>
+              <div class="admin-file-input">
+                <i class="fa-solid fa-upload"></i> Upload File
+                <input type="file" id="cakeImageFile" accept="image/*">
+              </div>
+            </div>
+            <div class="admin-preview" id="adminPreview">
+              <img id="adminPreviewImg" src="" alt="Preview">
+            </div>
+          </div>
+          <div class="admin-actions">
+            <button type="button" class="btn btn-small admin-btn-cancel" id="adminFormCancel" style="display:none">Cancel Edit</button>
+            <button type="submit" class="btn btn-primary" id="adminFormSubmit"><i class="fa-solid fa-plus"></i> Add Cake</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Manage Cakes List -->
+      <div class="admin-form-section" id="adminManageSection">
+        <div class="admin-cake-list" id="adminCakeList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+/* =========================================================
+   Heavenly Bites — script.js
+   Handles: sticky navbar, mobile menu, scroll reveal,
+   smooth scroll, active nav highlighting, form validation,
+   animated counters, back-to-top, scroll progress bar,
+   admin panel with localStorage cake management.
+   ========================================================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------------------------------------------------
+     DEFAULT CAKE DATA
+  --------------------------------------------------- */
+  const MESSENGER_URL = 'https://www.messenger.com/t/YOUR_PAGE_NAME'; // UPDATE: Replace YOUR_PAGE_NAME with your FB page username
+  const DEFAULT_CAKES = [
+    { id: 'd1', name: 'Chocolate Truffle', desc: 'Rich dark chocolate layered cake with silky ganache frosting.', price: 1200, tag: 'Birthday', img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80' },
+    { id: 'd2', name: 'Red Velvet', desc: 'Classic red crumb finished with whipped cream-cheese frosting.', price: 1300, tag: 'Anniversary', img: 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=800&q=80' },
+    { id: 'd3', name: 'Black Forest', desc: 'Cherry-filled sponge with whipped cream and chocolate shavings.', price: 1400, tag: 'Marriage', img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80' },
+    { id: 'd4', name: 'Strawberry Delight', desc: 'Vanilla sponge layered with fresh strawberry compote & cream.', price: 1100, tag: 'Birthday', img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80' },
+    { id: 'd5', name: 'Mango Cheesecake', desc: 'Creamy baked cheesecake topped with fresh mango glaze.', price: 1500, tag: 'Anniversary', img: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80' },
+    { id: 'd6', name: 'Rainbow Cake', desc: 'Six vibrant vanilla layers wrapped in silky buttercream.', price: 1600, tag: 'Birthday', img: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=800&q=80' },
+    { id: 'd7', name: 'Wedding Floral Cake', desc: 'Three-tier elegant sponge adorned with fresh fondant flowers.', price: 2000, tag: 'Marriage', img: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=800&q=80' },
+    { id: 'd8', name: 'Butterscotch Cake', desc: 'Caramel-drizzled butterscotch sponge with crunchy praline.', price: 1250, tag: 'Anniversary', img: 'https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&w=800&q=80' },
+    { id: 'd9', name: 'Kids Birthday Fun Cake', desc: 'Colourful sponge with sprinkles, candy toppings and candles.', price: 1000, tag: 'Birthday', img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80' }
+  ];
+
+  /* ---------------------------------------------------
+     LOCALSTORAGE HELPERS
+  --------------------------------------------------- */
+  function getCakes() {
+    const data = localStorage.getItem('hb_cakes');
+    if (!data || JSON.parse(data).length === 0) {
+      localStorage.setItem('hb_cakes', JSON.stringify(DEFAULT_CAKES));
+      return [...DEFAULT_CAKES];
+    }
+    return JSON.parse(data);
+  }
+
+  function saveCakes(cakes) {
+    localStorage.setItem('hb_cakes', JSON.stringify(cakes));
+  }
+
+  function generateId() {
+    return 'cake_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
+  }
+
+  /* ---------------------------------------------------
+     RENDER CAKES TO GRID
+  --------------------------------------------------- */
+  function renderCakes() {
+    const grid = document.querySelector('.cake-grid');
+    if (!grid) return;
+    const cakes = getCakes();
+
+    if (cakes.length === 0) {
+      grid.innerHTML = '<div class="admin-empty" style="grid-column:1/-1"><i class="fa-solid fa-cake-candles"></i><p>No cakes yet. Add one from the Admin Panel!</p></div>';
+      return;
+    }
+
+    grid.innerHTML = cakes.map(cake => `
+      <article class="cake-card reveal">
+        <div class="cake-img">
+          <img src="${escapeHtml(cake.img)}" alt="${escapeHtml(cake.name)} cake" loading="lazy">
+          ${cake.tag ? `<span class="cake-tag">${escapeHtml(cake.tag)}</span>` : ''}
+        </div>
+        <div class="cake-body">
+          <h3>${escapeHtml(cake.name)}</h3>
+          <p>${escapeHtml(cake.desc)}</p>
+          <div class="cake-footer">
+            <span class="price">৳${parseFloat(cake.price).toFixed(0)}</span>
+            <a href="${MESSENGER_URL}" target="_blank" rel="noopener" class="btn btn-small">Order Now</a>
+          </div>
+        </div>
+      </article>
+    `).join('');
+
+    // Re-observe new elements for scroll reveal
+    grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  /* ---------------------------------------------------
+     ADMIN PASSWORD
+  --------------------------------------------------- */
+  const ADMIN_PASSWORD = 'heavenly2025';
+  const passOverlay = document.getElementById('adminPassOverlay');
+  const passInput = document.getElementById('adminPassInput');
+  const passError = document.getElementById('adminPassError');
+  const passSubmit = document.getElementById('adminPassSubmit');
+  const passCancel = document.getElementById('adminPassCancel');
+
+  function openPassModal() {
+    passOverlay.classList.add('open');
+    passInput.value = '';
+    passError.textContent = '';
+    setTimeout(() => passInput.focus(), 100);
+  }
+
+  function closePassModal() {
+    passOverlay.classList.remove('open');
+  }
+
+  passSubmit.addEventListener('click', () => {
+    if (passInput.value === ADMIN_PASSWORD) {
+      closePassModal();
+      openAdmin();
+    } else {
+      passError.textContent = 'Wrong password. Try again.';
+      passInput.value = '';
+      passInput.focus();
+    }
+  });
+
+  passInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') passSubmit.click();
+  });
+
+  passCancel.addEventListener('click', closePassModal);
+  passOverlay.addEventListener('click', (e) => {
+    if (e.target === passOverlay) closePassModal();
+  });
+
+  /* ---------------------------------------------------
+     ADMIN PANEL
+  --------------------------------------------------- */
+  const adminOverlay = document.getElementById('adminOverlay');
+  const adminClose = document.getElementById('adminClose');
+  const adminFooterLink = document.getElementById('adminFooterLink');
+  const adminTabs = document.querySelectorAll('.admin-tab');
+  const adminAddSection = document.getElementById('adminAddSection');
+  const adminManageSection = document.getElementById('adminManageSection');
+  const adminCakeForm = document.getElementById('adminCakeForm');
+  const adminCakeList = document.getElementById('adminCakeList');
+  const adminMsg = document.getElementById('adminMsg');
+  const editCakeIdInput = document.getElementById('editCakeId');
+  const adminFormSubmit = document.getElementById('adminFormSubmit');
+  const adminFormCancel = document.getElementById('adminFormCancel');
+  const cakeImageUrl = document.getElementById('cakeImageUrl');
+  const cakeImageFile = document.getElementById('cakeImageFile');
+  const adminPreview = document.getElementById('adminPreview');
+  const adminPreviewImg = document.getElementById('adminPreviewImg');
+
+  function openAdmin() {
+    adminOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    renderManageList();
+    clearAdminForm();
+  }
+
+  function closeAdmin() {
+    adminOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    clearAdminForm();
+  }
+
+  adminFooterLink.addEventListener('click', openPassModal);
+  const adminNavLink = document.getElementById('adminNavLink');
+  if (adminNavLink) {
+    adminNavLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMenu();
+      openPassModal();
+    });
+  }
+  adminClose.addEventListener('click', closeAdmin);
+  adminOverlay.addEventListener('click', (e) => {
+    if (e.target === adminOverlay) closeAdmin();
+  });
+
+  // Tabs
+  adminTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      adminTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.dataset.tab;
+      adminAddSection.classList.toggle('active', target === 'add');
+      adminManageSection.classList.toggle('active', target === 'manage');
+      if (target === 'manage') renderManageList();
+    });
+  });
+
+  // Image preview from URL
+  cakeImageUrl.addEventListener('input', () => {
+    const url = cakeImageUrl.value.trim();
+    if (url) {
+      adminPreviewImg.src = url;
+      adminPreview.classList.add('show');
+      adminPreviewImg.onerror = () => adminPreview.classList.remove('show');
+    } else {
+      adminPreview.classList.remove('show');
+    }
+  });
+
+  // Image preview from file upload
+  cakeImageFile.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (file.size > 2 * 1024 * 1024) {
+      showAdminMsg('Image must be under 2MB.', 'error');
+      cakeImageFile.value = '';
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      cakeImageUrl.value = '';
+      adminPreviewImg.src = ev.target.result;
+      adminPreview.classList.add('show');
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Form submit (add or edit)
+  adminCakeForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('cakeName').value.trim();
+    const desc = document.getElementById('cakeDesc').value.trim();
+    const price = parseFloat(document.getElementById('cakePrice').value);
+    const tag = document.getElementById('cakeTag').value;
+    const urlVal = cakeImageUrl.value.trim();
+    const hasPreview = adminPreview.classList.contains('show');
+    const img = hasPreview ? adminPreviewImg.src : urlVal;
+
+    if (!name || !desc || isNaN(price) || price <= 0) {
+      showAdminMsg('Please fill in name, description, and a valid price.', 'error');
+      return;
+    }
+    if (!img || img === window.location.href || img === window.location.origin + '/') {
+      showAdminMsg('Please provide a cake image (URL or file upload).', 'error');
+      return;
+    }
+
+    const cakes = getCakes();
+    const editId = editCakeIdInput.value;
+
+    if (editId) {
+      // Edit existing
+      const idx = cakes.findIndex(c => c.id === editId);
+      if (idx !== -1) {
+        cakes[idx] = { ...cakes[idx], name, desc, price, tag, img };
+        saveCakes(cakes);
+        showAdminMsg('Cake updated successfully!', 'success');
+      }
+    } else {
+      // Add new
+      const newCake = { id: generateId(), name, desc, price, tag, img };
+      cakes.push(newCake);
+      saveCakes(cakes);
+      showAdminMsg('Cake added successfully!', 'success');
+    }
+
+    clearAdminForm();
+    renderCakes();
+    renderManageList();
+  });
+
+  adminFormCancel.addEventListener('click', () => {
+    clearAdminForm();
+  });
+
+  function clearAdminForm() {
+    adminCakeForm.reset();
+    editCakeIdInput.value = '';
+    adminFormSubmit.innerHTML = '<i class="fa-solid fa-plus"></i> Add Cake';
+    adminFormCancel.style.display = 'none';
+    adminPreview.classList.remove('show');
+    adminPreviewImg.removeAttribute('src');
+  }
+
+  function showAdminMsg(msg, type) {
+    adminMsg.textContent = msg;
+    adminMsg.className = 'admin-msg show ' + type;
+    setTimeout(() => { adminMsg.className = 'admin-msg'; }, 3500);
+  }
+
+  /* ---------------------------------------------------
+     MANAGE CAKES LIST
+  --------------------------------------------------- */
+  function renderManageList() {
+    const cakes = getCakes();
+    if (cakes.length === 0) {
+      adminCakeList.innerHTML = '<div class="admin-empty"><i class="fa-solid fa-cake-candles"></i><p>No cakes to manage. Add your first cake!</p></div>';
+      return;
+    }
+
+    adminCakeList.innerHTML = cakes.map(cake => `
+      <div class="admin-cake-item" data-id="${cake.id}">
+        <img src="${escapeHtml(cake.img)}" alt="${escapeHtml(cake.name)}">
+        <div class="admin-cake-info">
+          <h4>${escapeHtml(cake.name)}</h4>
+          <p>${escapeHtml(cake.desc)}</p>
+          <span class="price">$${parseFloat(cake.price).toFixed(2)}</span>
+          ${cake.tag ? ` <span style="font-size:0.75rem;color:var(--primary);font-weight:600">(${escapeHtml(cake.tag)})</span>` : ''}
+        </div>
+        <div class="admin-cake-actions">
+          <button class="admin-edit-btn" title="Edit" data-id="${cake.id}"><i class="fa-solid fa-pen"></i></button>
+          <button class="admin-delete-btn" title="Delete" data-id="${cake.id}"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+    `).join('');
+
+    // Edit buttons
+    adminCakeList.querySelectorAll('.admin-edit-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.id;
+        const cake = cakes.find(c => c.id === id);
+        if (!cake) return;
+
+        editCakeIdInput.value = cake.id;
+        document.getElementById('cakeName').value = cake.name;
+        document.getElementById('cakeDesc').value = cake.desc;
+        document.getElementById('cakePrice').value = cake.price;
+        document.getElementById('cakeTag').value = cake.tag || '';
+        cakeImageUrl.value = cake.img.startsWith('data:') ? '' : cake.img;
+        adminPreviewImg.src = cake.img;
+        adminPreview.classList.add('show');
+
+        adminFormSubmit.innerHTML = '<i class="fa-solid fa-check"></i> Update Cake';
+        adminFormCancel.style.display = 'inline-flex';
+
+        // Switch to Add tab
+        adminTabs.forEach(t => t.classList.remove('active'));
+        adminTabs[0].classList.add('active');
+        adminAddSection.classList.add('active');
+        adminManageSection.classList.remove('active');
+      });
+    });
+
+    // Delete buttons
+    adminCakeList.querySelectorAll('.admin-delete-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!confirm('Are you sure you want to delete this cake?')) return;
+        const id = btn.dataset.id;
+        const updated = getCakes().filter(c => c.id !== id);
+        saveCakes(updated);
+        renderCakes();
+        renderManageList();
+        showAdminMsg('Cake deleted.', 'success');
+      });
+    });
+  }
+
+  /* ---------------------------------------------------
+     1. Sticky Navbar on scroll
+  --------------------------------------------------- */
+  const navbar = document.getElementById('navbar');
+  const scrollProgress = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+
+  function handleScrollEffects() {
+    const scrollY = window.scrollY;
+
+    // Sticky navbar background
+    navbar.classList.toggle('scrolled', scrollY > 60);
+
+    // Back to top button visibility
+    backToTop.classList.toggle('show', scrollY > 500);
+
+    // Scroll progress bar
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+    scrollProgress.style.width = progress + '%';
+  }
+
+  window.addEventListener('scroll', handleScrollEffects, { passive: true });
+  handleScrollEffects(); // run once on load
+
+  /* ---------------------------------------------------
+     2. Mobile Hamburger Menu
+  --------------------------------------------------- */
+  const hamburger = document.getElementById('hamburger');
+  const navLinksEl = document.getElementById('navLinks');
+
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    navLinksEl.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinksEl.classList.toggle('open');
+    hamburger.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close mobile menu whenever a nav link is tapped
+  document.querySelectorAll('.nav-links .nav-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    if (navLinksEl.classList.contains('open') &&
+        !navLinksEl.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  /* ---------------------------------------------------
+     3. Smooth Scrolling for in-page anchor links
+  --------------------------------------------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId.length <= 1) return; // ignore bare "#"
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
+      e.preventDefault();
+      const navHeight = navbar.offsetHeight;
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight + 1;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  /* ---------------------------------------------------
+     4. Scroll Reveal Animations (IntersectionObserver)
+  --------------------------------------------------- */
+  const revealEls = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ---------------------------------------------------
+     5. Active Navigation Highlighting on scroll
+  --------------------------------------------------- */
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-link');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navAnchors.forEach(link => {
+          link.classList.toggle('active-link', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-90px 0px -40% 0px' });
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+  /* ---------------------------------------------------
+     6. Animated Counters (Why Choose Us section)
+  --------------------------------------------------- */
+  const counters = document.querySelectorAll('.counter');
+
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const duration = 1800; // ms
+    const startTime = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.floor(eased * target);
+      el.textContent = value.toLocaleString();
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target.toLocaleString();
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach(counter => counterObserver.observe(counter));
+
+  /* ---------------------------------------------------
+     7. Back to Top button click
+  --------------------------------------------------- */
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------------------------------------------------
+     8. Contact Form Validation
+  --------------------------------------------------- */
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+
+  const validators = {
+    name: (value) => value.trim().length >= 2 ? '' : 'Please enter your full name.',
+    email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? '' : 'Please enter a valid email address.',
+    phone: (value) => /^[+]?[\d\s()-]{7,}$/.test(value.trim()) ? '' : 'Please enter a valid phone number.',
+    message: (value) => value.trim().length >= 10 ? '' : 'Message should be at least 10 characters.'
+  };
+
+  function showFieldError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    const errorEl = document.getElementById(fieldId + 'Error');
+    const group = field.closest('.form-group');
+
+    if (message) {
+      group.classList.add('invalid');
+      errorEl.textContent = message;
+    } else {
+      group.classList.remove('invalid');
+      errorEl.textContent = '';
+    }
+  }
+
+  function validateField(fieldId) {
+    const field = document.getElementById(fieldId);
+    const message = validators[fieldId](field.value);
+    showFieldError(fieldId, message);
+    return message === '';
+  }
+
+  // Live validation on blur
+  Object.keys(validators).forEach(fieldId => {
+    const field = document.getElementById(fieldId);
+    field.addEventListener('blur', () => validateField(fieldId));
+    field.addEventListener('input', () => {
+      // clear error as user types once field becomes valid
+      if (field.closest('.form-group').classList.contains('invalid')) {
+        validateField(fieldId);
+      }
+    });
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let isValid = true;
+    Object.keys(validators).forEach(fieldId => {
+      if (!validateField(fieldId)) isValid = false;
+    });
+
+    if (!isValid) {
+      formSuccess.classList.remove('show');
+      return;
+    }
+
+    // Simulate successful submission (no backend wired up)
+    formSuccess.classList.add('show');
+    contactForm.reset();
+
+    setTimeout(() => {
+      formSuccess.classList.remove('show');
+    }, 6000);
+  });
+
+  /* ---------------------------------------------------
+     9. Newsletter form (footer) — simple UX feedback
+  --------------------------------------------------- */
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = newsletterForm.querySelector('input');
+      if (input.value.trim()) {
+        input.value = '';
+        input.placeholder = 'Subscribed! Thank you';
+        setTimeout(() => { input.placeholder = 'Your email'; }, 3500);
+      }
+    });
+  }
+
+  /* ---------------------------------------------------
+     10. Footer current year
+  --------------------------------------------------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------------------------------------------------
+     11. Gallery hover interaction (keyboard accessible)
+  --------------------------------------------------- */
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.setAttribute('tabindex', '0');
+    item.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        item.classList.toggle('zoomed');
+      }
+    });
+  });
+
+  /* ---------------------------------------------------
+     12. Render cakes from localStorage on load
+  --------------------------------------------------- */
+  renderCakes();
+
+  // Hide default static cake cards if localStorage has data
+  // (the static HTML cards are replaced by renderCakes())
+
+});
+
+</script>
+</body>
+</html>
