@@ -1282,6 +1282,42 @@ input, textarea { font-family: inherit; }
   .admin-cake-item { flex-wrap: wrap; }
 }
 
+/* ============ Toast Notification ============ */
+.toast-container {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.toast {
+  background: #1E1E1E;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(233,30,99,.3);
+  animation: toastIn .4s var(--ease), toastOut .4s var(--ease) 3.5s forwards;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toast i { color: var(--primary); font-size: 1.1rem; }
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(20px) scale(.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes toastOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
+
 /* ============ Global Responsive ============ */
 @media (max-width: 900px) {
   .offer-inner { flex-direction: column; text-align: center; }
@@ -1348,7 +1384,7 @@ input, textarea { font-family: inherit; }
       <li><a href="javascript:void(0)" class="nav-link" id="adminNavLink"><i class="fa-solid fa-lock" style="font-size:0.8rem;margin-right:4px"></i>Admin</a></li>
     </ul>
 
-    <a href="https://www.messenger.com/t/YOUR_PAGE_NAME" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Order Now</a>
+    <a href="https://www.facebook.com/share/197WmdfKVo/" target="_blank" rel="noopener" class="btn btn-primary nav-cta" onclick="showOrderToast()">Order Now</a>
 
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -1373,7 +1409,7 @@ input, textarea { font-family: inherit; }
     <h1 class="hero-title reveal-up">Freshly Baked <span>Happiness</span></h1>
     <p class="hero-subtitle reveal-up">Every celebration deserves a Heavenly Bite.</p>
     <div class="hero-cta reveal-up">
-      <a href="https://www.messenger.com/t/YOUR_PAGE_NAME" target="_blank" rel="noopener" class="btn btn-primary">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="https://www.facebook.com/share/197WmdfKVo/" target="_blank" rel="noopener" class="btn btn-primary" onclick="showOrderToast()">Order Now <i class="fa-solid fa-arrow-right"></i></a>
       <a href="#gallery" class="btn btn-outline">View Menu</a>
     </div>
   </div>
@@ -1646,7 +1682,7 @@ input, textarea { font-family: inherit; }
       <p class="contact-lead">Have a celebration coming up? Reach out and let's design something sweet together.</p>
 
       <ul class="contact-list">
-        <li><i class="fa-solid fa-user"></i><span><strong>MIZBA</strong> (Owner)</span></li>
+        <li><i class="fa-solid fa-user"></i><span><strong>Mizba Hull Jannat</strong> (Owner)</span></li>
         <li><i class="fa-solid fa-location-dot"></i><span>Bodo Kumira, Sitakunda, Chittagong, Bangladesh</span></li>
         <li><i class="fa-solid fa-phone"></i><span>+880 1825-757800</span></li>
         <li><i class="fa-solid fa-phone"></i><span>+880 1814-940547</span></li>
@@ -1694,7 +1730,7 @@ input, textarea { font-family: inherit; }
       <button type="submit" class="btn btn-primary form-submit">
         <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
       </button>
-      <p class="form-success" id="formSuccess" role="status" aria-live="polite">Thank you! Your message has been sent &mdash; we'll be in touch shortly.</p>
+      <p class="form-success" id="formSuccess" role="status" aria-live="polite">Thank you! Your message has been sent &mdash; we'll be in touch shortly. Have a sweet day! &#127856;</p>
     </form>
   </div>
 </section>
@@ -1851,6 +1887,8 @@ input, textarea { font-family: inherit; }
   <i class="fa-solid fa-arrow-up"></i>
 </button>
 
+<div class="toast-container" id="toastContainer"></div>
+
 <script>
 /* =========================================================
    Heavenly Bites — script.js
@@ -1865,7 +1903,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------------------------------------------------
      DEFAULT CAKE DATA
   --------------------------------------------------- */
-  const MESSENGER_URL = 'https://www.messenger.com/t/YOUR_PAGE_NAME'; // UPDATE: Replace YOUR_PAGE_NAME with your FB page username
+  const MESSENGER_URL = 'https://www.facebook.com/share/197WmdfKVo/';
   const DEFAULT_CAKES = [
     { id: 'd1', name: 'Chocolate Truffle', desc: 'Rich dark chocolate layered cake with silky ganache frosting.', price: 1200, tag: 'Birthday', img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80' },
     { id: 'd2', name: 'Red Velvet', desc: 'Classic red crumb finished with whipped cream-cheese frosting.', price: 1300, tag: 'Anniversary', img: 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=800&q=80' },
@@ -1922,7 +1960,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>${escapeHtml(cake.desc)}</p>
           <div class="cake-footer">
             <span class="price">৳${parseFloat(cake.price).toFixed(0)}</span>
-            <a href="${MESSENGER_URL}" target="_blank" rel="noopener" class="btn btn-small">Order Now</a>
+            <a href="${MESSENGER_URL}" target="_blank" rel="noopener" class="btn btn-small" onclick="showOrderToast()">Order Now</a>
           </div>
         </div>
       </article>
@@ -2457,13 +2495,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------------------------------------------------
-     12. Render cakes from localStorage on load
-  --------------------------------------------------- */
-  renderCakes();
+/* ---------------------------------------------------
+      12. Render cakes from localStorage on load
+   --------------------------------------------------- */
+   renderCakes();
 
-  // Hide default static cake cards if localStorage has data
-  // (the static HTML cards are replaced by renderCakes())
+   function showOrderToast() {
+     const container = document.getElementById('toastContainer');
+     const toast = document.createElement('div');
+     toast.className = 'toast';
+     toast.innerHTML = '<i class="fa-solid fa-circle-info"></i> Please use Messenger to place your order. Thank you!';
+     container.appendChild(toast);
+     setTimeout(() => { toast.remove(); }, 4000);
+   }
+   window.showOrderToast = showOrderToast;
+
+   // Attach toast to all order buttons
+   document.querySelectorAll('.btn-small[onclick="showOrderToast()"]').forEach(btn => {
+     btn.addEventListener('click', showOrderToast);
+   });
 
 });
 
